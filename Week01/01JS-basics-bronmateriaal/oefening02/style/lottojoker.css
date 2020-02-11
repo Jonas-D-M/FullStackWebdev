@@ -1,0 +1,37 @@
+body {
+  background: #e1eec3;
+  background: -webkit-linear-gradient(to left, #f05053, #e1eec3);
+  background: linear-gradient(to left, #f05053, #e1eec3);
+  text-align: center;
+  color: white;
+  font-family: "Passion One", cursive;
+  font-size: 4em;
+}
+
+h1 {
+  text-shadow: 2px 2px 2px black;
+  letter-spacing: 10px;
+}
+
+.js-result {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  min-width: 700px;
+  justify-content: space-around;
+}
+
+.js-result div {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: white;
+  color: #333;
+  line-height: 100px;
+  text-shadow: 2px 2px 2px #ccc;
+}
+.js-result div img {
+  width: 50px;
+  height: 50px;
+  padding-top: 25px;
+}
