@@ -1,19 +1,6 @@
 'use strict';
 let APIKey = '74b199735022be5d6c0444a30db06528';
 let uri = `http://api.openweathermap.org/data/2.5/forecast?q=kortrijk,BE&appid=${APIKey}&units=metric&lang=nl`;
-/*
-<div class="dag">
-  <div class="datum">Maandag</div>
-  <div class="afbeelding">
-    <img src="images/weather/wi-thunderstorm.svg" alt="Onweer" />
-  </div>
-  <div class="uitleg">
-    Onweer
-  </div>
-  <div class="min">10</div>
-  <div class="max">20</div>
-</div>
-*/
 const laadWeatherInfo = function() {
   fetch(uri)
     .then(function(response) {
@@ -31,8 +18,7 @@ const laadWeatherInfo = function() {
     });
 };
 const verwerkWeer = function(json) {
-  console.log(json);
-  document.querySelector('.js-city-placeholder').innerHTML = json.city.name;
+  document.querySelector('.location').innerHTML = json.city.name;
   let str = '';
   let day = [];
   let days = ['Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag', 'Zondag'];
@@ -41,21 +27,23 @@ const verwerkWeer = function(json) {
     let obj = json.list[i];
     let date = new Date(obj.dt * 1000);
     let daycount = date.getDay();
-    str += `<div class="c-forecast">
-            <div class="c-forecast__datum">${days[daycount]}</div>
-            <div class="c-forecast__sym">
-              <img src="images/weather/${weatherCodeToImage(obj.weather[0].id)}" alt="${obj.weather[0].description}" />
-            </div>
-
-            <div class="c-forecast__uitleg">
-            ${obj.weather[0].description}
-            </div>
-            <div class="c-forecast__max">${Math.round(obj.main.temp_max)}&#176;C</div>
-            <div class="c-forecast__min">${Math.round(obj.main.temp_min)}&#176;C</div>
-           
-          </div>`;
+    str += `<div class="dag">
+          <div class="datum">${days[daycount]}</div>
+          <div class="afbeelding">
+            <img src="images/weather/${weatherCodeToImage(obj.weather[0].id)}" alt="${obj.weather[0].description}" />
+          </div>
+          <div class="uitleg">
+          ${obj.weather[0].description}
+          </div>
+          <div class="min">${Math.round(obj.main.temp_min)}&#176;C</div>
+          <div class="max">${Math.round(obj.main.temp_max)}&#176;C</div>
+          <div class="wind">
+          <img src="images/weather/${directionToImage(parseFloat(obj.wind.deg))}" alt="${obj.wind.deg}" />
+          <img src="images/weather/${strengthToImage(parseFloat(obj.wind.speed))}" alt="${obj.wind.speed}" />
+          </div>
+        </div>`;
   }
-  document.querySelector('.js-weather-placeholder').innerHTML = str;
+  document.querySelector('.forecast').innerHTML = str;
 };
 const weatherCodeToImage = function(code) {
   let codeString = code.toString();
@@ -75,8 +63,21 @@ const weatherCodeToImage = function(code) {
   };
   return specials[code] !== undefined ? specials[code] : normal[firstDigit] !== undefined ? normal[firstDigit] : 'wi-alien.svg';
 };
-
+const directionToImage = function(direction) {
+  if (direction >= 315 || direction < 45) {
+    return 'wi-wind-deg-n.svg';
+  } else if (direction >= 45 && direction < 135) {
+    return 'wi-wind-deg-o.svg';
+  } else if (direction >= 135 && direction < 225) {
+    return 'wi-wind-deg-z.svg';
+  } else if (direction >= 225 && direction < 315) {
+    return 'wi-wind-deg-w.svg';
+  }
+};
+const strengthToImage = function(strength) {
+  let roundedStrength = Math.round(strength);
+  return `wi-wind-beaufort-${roundedStrength}.svg`;
+};
 document.addEventListener('DOMContentLoaded', function() {
-  console.info('DOMContent loaded');
   laadWeatherInfo();
 });
