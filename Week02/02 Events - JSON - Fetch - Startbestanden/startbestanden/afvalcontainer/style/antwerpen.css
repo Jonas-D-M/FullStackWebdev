@@ -1,0 +1,44 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #343838;
+}
+h1 {
+  text-align: center;
+}
+
+.c-locatie {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  border: 1px solid #005f6b;
+  margin: 0.5rem auto;
+}
+.c-locatie__adres {
+  padding: 0.5rem 0rem;
+  background-color: #008c9e;
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 1.25rem;
+}
+.c-locatie__info {
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+  color: #00b4cc;
+}
+
+.c-locatie__type {
+  border: 1px dashed #00b4cc;
+  padding: 0.25rem;
+  flex-basis: 10rem;
+  flex-grow: 1;
+  flex-shrink: 1;
+  text-align: center;
+}
+.c-locatie__aantal {
+  font-size: 1.5rem;
+  color: #005f6b;
+}

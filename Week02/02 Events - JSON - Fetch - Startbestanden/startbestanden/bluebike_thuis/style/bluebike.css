@@ -1,0 +1,79 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-place {
+  width: 80vw;
+  border: solid thin #ccc;
+  display: flex;
+  flex-direction: row;
+}
+.c-place__amount {
+  flex-grow: 1;
+  text-align: right;
+  font-size: 4rem;
+  font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+}
+.c-place__bikes {
+}
+.c-place__city {
+  text-align: center;
+}
+.c-place__cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 3;
+  flex-basis: 0;
+  background-image: url('../images/cover.jpg');
+  background-size: cover;
+  color: #fff;
+  font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+}
+.c-place__label {
+  margin: 0;
+  text-transform: uppercase;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.c-place__message {
+}
+.c-place__status {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+.c-place__status--available {
+  background-color: rgb(16, 134, 1);
+}
+.c-place__status--in-use {
+  background-color: rgb(1, 54, 134);
+}
+.c-place__status--out-of-use {
+  background-color: rgb(134, 1, 19);
+}
+
+@media only screen and (max-width: 800px) {
+  .c-place {
+    width: 500px;
+    min-width: 500px;
+    flex-direction: column;
+  }
+  .c-place__cover {
+    height: 300px;
+    flex-basis: auto;
+  }
+  .c-place__status {
+    flex-direction: row;
+    display: flex;
+    justify-content: stretch;
+    flex-basis: auto;
+  }
+  .c-place__label {
+    font-size: 1rem;
+  }
+}
