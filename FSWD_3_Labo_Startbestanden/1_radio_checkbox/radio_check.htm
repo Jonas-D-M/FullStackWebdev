@@ -10,6 +10,39 @@
   </head>
 
   <body>
-    
+    <form action="https://www.diero.be/MCT/showpost.php" method="POST">
+      <fieldset>
+        <legend>Uw voorkeuren</legend>
+        <div>Wat vindt u het meest belangrijk aan een website:</div>
+        <div>
+          <input type="checkbox" name="voorkeuren[]" id="uitgever" value="uitgever" />
+          <label for="uitgever">De bekendheid met de uitgever van de website;</label><br />
+          <input type="checkbox" name="voorkeuren[]" id="wegwijs" value="wegwijs" />
+          <label for="wegwijs">Het gemakkelijk wegwijs geraken op de website;</label>
+        </div>
+
+        <div>
+          Hamvraag: hoe beoordeelt u mijn website<br />
+          <input type="radio" name="beoordeling" id="zeer_goed" value="zg" checked />
+          <label for="zeer_goed">zeer goed</label>
+          <input type="radio" name="beoordeling" id="goed" value="g" />
+          <label for="goed">goed</label>
+          <input type="radio" name="beoordeling" id="matig" value="m" />
+          <label for="matig">matig</label>
+          <input type="radio" name="beoordeling" id="gezakt" value="gezakt" />
+          <label for="gezakt">gezakt</label>
+        </div>
+
+        <div>
+          <label for="score">Kan u dit uitdrukken in een score op 10?</label> <br />
+          <input type="range" name="score" id="score" min="0" max="10" step="0.5" value="8" />
+          <output class="js-output">8/10</output>
+        </div>
+      </fieldset>
+      <br />
+      <div>
+        <input type="submit" value="Geef je mening" />
+      </div>
+    </form>
   </body>
 </html>
