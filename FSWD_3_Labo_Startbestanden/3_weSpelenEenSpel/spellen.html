@@ -1,67 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- <link rel="stylesheet" href="./style/spellen.css" /> -->
+    <script src="script/spellen.js"></script>
+    <title>Spellen</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <script src="script/spellen.js"></script>
-  <title>Spellen</title>
-</head>
-
-<body>
-  <section class="container">
-    <h1 class="display-4 mb-5">We spelen een spel vanavond!</h1>
-    <form method="" action="https://www.diero.be/MCT/showpost.php">
-      <div class="form-group row">
-        <label for="voornaam" class="col-2 col-form-label">Naam: </label>
-        <div class="col-10">
-          <input type="text" class="form-control" id="" name="" placeholder="">
+  <body>
+    <section class="container">
+      <h1 class="display-4 mb-5">We spelen een spel vanavond!</h1>
+      <form method="POST" action="https://www.diero.be/MCT/showpost.php">
+        <div class="form-group row">
+          <label for="naam" class="col-2 col-form-label">Naam: </label>
+          <div class="col-10">
+            <input type="text" class="form-control" id="naam" name="naam" placeholder="Naam" required pattern="[A-Za-z- 'éèà]{2,}" title="Minstens 2 tekens, niet numeriek" />
+          </div>
         </div>
-      </div>
 
-      <div class="form-group row">
-        <label for="naam" class="col-2 col-form-label">Voornaam: </label>
-        <div class="col-10">
-          <input type="text" class="form-control" id="" name="">
+        <div class="form-group row">
+          <label for="voornaam" class="col-2 col-form-label">Voornaam: </label>
+          <div class="col-10">
+            <input type="text" class="form-control" id="voornaam" name="voornaam" placeholder="Voornaam" required pattern="[A-Za-z- 'éèàïüë]{2,}" title="Minstens 2 tekens, niet numeriek" />
+          </div>
         </div>
-      </div>
 
-      <div class="form-group row">
-        <label for="email" class="col-2 col-form-label">E-mail: </label>
-        <div class="col-10">
-          <input type="email" class="form-control" id="" name="">
+        <div class="form-group row">
+          <label for="email" class="col-2 col-form-label">E-mail: </label>
+          <div class="col-10">
+            <input type="email" class="form-control" id="email" name="email" placeholder="email@example.com" required title="Een emailadres met een @" />
+          </div>
         </div>
-      </div>
 
-      <div class="form-group row">
-        <label for="spel" class="col-2 col-form-label">Spel: </label>
-        <div class="col-10">
-          <select class="form-control" id="" name="">
-          </select>
+        <div class="form-group row">
+          <label for="spel" class="col-2 col-form-label">Spel: </label>
+          <div class="col-10">
+            <select class="form-control js-spel" id="spel" name="spel" required>
+              <option value="" label="Maak uw keuze"></option>
+            </select>
+          </div>
         </div>
-      </div>
 
-      <div class="form-group row">
-        <div class="col-2"></div>
-        <div class="col-10">
-          <input class="form-check-row mr-3" type="checkbox" name="" id="" />
-          <label for="voorwaarden" class="col-form label">Ik ga akkoord met de voorwaarden</label>
+        <div class="form-group row">
+          <div class="col-2"></div>
+          <div class="col-10">
+            <input class="form-check-row mr-3" type="checkbox" name="voorwaarden" id="voorwaarden" required />
+            <label for="voorwaarden" class="col-form label">Ik ga akkoord met de voorwaarden</label>
+          </div>
         </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-2"></div>
-        <div class="col-10">
-
-          <input class="btn btn-primary" type="" name="" value="" id="" />
+        <div class="form-group row">
+          <div class="col-2"></div>
+          <div class="col-10">
+            <input class="btn btn-primary" type="submit" name="button" value="Ik wil een spel spelen vanavond!" id="button" />
+          </div>
         </div>
-      </div>
-    </form>
-  </section>
-  <section class="js-spel container">
-    <img src="" alt="" id="flag" />
-  </section>
-</body>
-
+      </form>
+    </section>
+    <section class="js-image container">
+      <img src="" alt="" id="flag" />
+    </section>
+  </body>
 </html>
