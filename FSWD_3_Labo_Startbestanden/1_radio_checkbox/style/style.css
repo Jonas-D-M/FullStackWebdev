@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* CSS Document */
+
+fieldset {
+  width: 50%;
+}
+
+body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+}
+
+.label {
+  width: 100px;
+  float: left;
+}
+
+div {
+  margin-bottom: 2em;
+}

@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body,
+input,
+select {
+  font-family: Verdana, sans-serif;
+  font-size: 1.6rem;
+}
+
+h1 {
+  margin-bottom: 1em;
+}
+
+div {
+  margin-bottom: 1em;
+}
+
+label {
+  width: 150px;
+  display: inline-block;
+}
+
+input[type='checkbox'] {
+  margin-left: calc(16 * var(--standard_margin));
+  height: 1em;
+  vertical-align: middle;
+}
+
+input[type='checkbox'] + label {
+  width: calc(100% - 200px);
+}
+
+input[type='text'],
+input[type='email'],
+select,
+input[list] {
+  width: 400px;
+}
+
+input:invalid,
+select:invalid {
+  background-color: rgba(255, 0, 0, 0.05);
+}
+
+input:valid,
+select:valid {
+  background-color: rgba(0, 255, 0, 0.05);
+}
+
+.spel {
+  width: 600px;
+}

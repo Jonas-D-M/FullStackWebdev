@@ -1,0 +1,40 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, sans-serif;
+  line-height: 1.4rem;
+}
+
+form div {
+  margin-bottom: 1rem;
+}
+
+form {
+  width: 50%;
+}
+
+label {
+  width: 150px;
+  display: inline-block;
+}
+
+input[type="checkbox"] {
+  margin-left: 160px;
+  height: 1.4rem;
+  vertical-align: middle;
+}
+
+input[type="checkbox"]+label {
+  width: calc(100% - 200px);
+}
+
+input:invalid, select:invalid {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+input[type=number]:valid, select:valid {
+  background-color: rgba(0, 255, 0, 0.1);
+}
