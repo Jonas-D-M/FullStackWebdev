@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Track and Trace - Overzicht</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style/trace.css" />
+    <!-- Vergeet het js script niet te koppelen-->
+  </head>
+  <body>
+    <main class="c-track">
+      <h1 class="c-track__title">Track and Trace</h1>
+      <section class="c-track__cover"></section>
+      <section class="c-track__search">
+        <h2>Te zoeken pakket</h2>
+        <div class="c-row">
+          <label for="trace-nr" class="c-row__label">Nummer</label>
+          <input class="c-row__info js-search-txt" type="text" name="trace-nr" id="trace-nr" />
+          <input type="submit" class="c-row__btn js-search-btn" value="Zoek op"></input>
+        </div>
+      </section>
+      <section class="c-track__info-sender u-hide js-section-info-sender">
+        <h2>Verzender</h2>
+        <div class="c-row">
+          <div class="c-row__label">Naam:</div>
+          <div class="c-row__info js-sender-name">...............</div>
+        </div>
+        <div class="c-row">
+          <div class="c-row__label">Postcode:</div>
+          <div class="c-row__info js-sender-postcode">....</div>
+        </div>
+      </section>
+      <section class="c-track__trace u-hide js-section-trace">
+        <div class="c-step js-step-drop-off">
+          <div class="c-step__info">Drop off</div>
+          <div class="c-step__symbol"><img src="image/gift.png" width="100px" alt="dropoff" /></div>
+          <div class="c-step__datum js-step-drop-off-datum">loading...</div>
+        </div>
+        <div class="c-step js-step-warehouse">
+          <div class="c-step__info">Warehouse</div>
+          <div class="c-step__symbol">
+            <img src="image/warehouse.png" width="100px" alt="warehouse" />
+          </div>
+          <div class="c-step__datum js-step-warehouse-datum">loading...</div>
+        </div>
+        <div class="c-step js-step-out-for-delivery">
+          <div class="c-step__info">Out For Delivery</div>
+          <div class="c-step__symbol">
+            <img src="image/shipped.png" width="100px" alt="out for delivery" />
+          </div>
+          <div class="c-step__datum js-step-out-for-delivery-datum">loading...</div>
+        </div>
+        <div class="c-step js-step-delivered">
+          <div class="c-step__info">Delivered</div>
+          <div class="c-step__symbol">
+            <img src="image/delivery.png" width="100px" alt="delivered" />
+          </div>
+          <div class="c-step__datum js-step-delivered-datum">loading...</div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

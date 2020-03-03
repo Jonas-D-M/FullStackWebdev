@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Track and Trace - Voeg toe</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style/trace.css" />
+    <!-- Vergeet het js script niet te koppelen-->
+  </head>
+  <body>
+    <main class="c-track">
+      <h1 class="c-track__title">Track and Trace</h1>
+      <section class="c-track__cover"></section>
+      <form action="http://127.0.0.1:5000/api/v1/trace" method="POST" class="c-track__add">
+        <h2>Voeg een pakket toe aan de track and trace</h2>
+        <div class="c-row">
+          <label for="trace-nr" class="c-row__label">Nummer</label>
+          <input class="c-row__info" type="text" name="trace-nr" id="trace-nr" />
+        </div>
+        <div class="c-row">
+          <label for="name-recipient" class="c-row__label">Naam</label>
+          <input class="c-row__info" type="text" name="name-recipient" id="name-recipient" />
+        </div>
+        <div class="c-row">
+          <label for="postcode-recipient" class="c-row__label">Postcode</label>
+          <input class="c-row__info" type="text" name="postcode-recipient" id="postcode-recipient" />
+        </div>
+        <div class="c-row u-extra-margin">
+          <input class="c-row__info" type="submit" name="submit" value="Verzenden naar backend" />
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

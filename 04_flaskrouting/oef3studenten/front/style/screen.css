@@ -1,0 +1,16 @@
+.c-resultaat {
+  margin-bottom: 0.5rem;
+}
+.c-resultaat__module {
+  font-style: italic;
+}
+.c-resultaat__punt {
+  color: #000;
+  font-weight: bold;
+}
+.c-resultaat__punt--gebuisd {
+  color: red;
+}
+.c-resultaat__punt--geslaagd {
+  color: green;
+}

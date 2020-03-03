@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/screen.css" />
+    <!-- Vergeet het js script niet te koppelen-->
+    <title>Winkel</title>
+  </head>
+
+  <body>
+    <main class="o-container">
+      <h1>MCT Webshop</h1>
+      <h2>Bestelling</h2>
+      <form action="http://127.0.0.1:5000/api/v1/payment" method="POST" class="c-order">
+        <div class="c-order__row">
+          <label class="c-order__label" for="productkeuze">Product</label>
+
+          <select name="product" class="c-order__control" id="productkeuze">
+            <option value="100">T-shirt</option>
+            <option value="101">Pull</option>
+            <option value="102">Koffie tas</option>
+          </select>
+        </div>
+
+        <div class="c-order__row">
+          <label class="c-order__label" for="aantalinvoer">Aantal</label>
+
+          <input type="number" name="aantal" min="1" max="99" required class="c-order__control" id="aantalinvoer" />
+        </div>
+
+        <div class="c-order__row">
+          <input type="submit" name="send" value="Verzenden" class="c-order__submit" />
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
