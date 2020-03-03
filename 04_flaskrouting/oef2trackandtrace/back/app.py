@@ -5,6 +5,7 @@ from flask_cors import CORS
 import os
 
 app = Flask(__name__)
+CORS(app)
 
 dict_postpakketten = {
     "s007": {
@@ -50,6 +51,14 @@ def hello_world():
 @app.route('/api/v1/trace', methods=['GET'])
 def track_alles():
     return jsonify(dict_postpakketten)
+
+
+@app.route('/api/v1/trace/<nr>', methods=['GET'])
+def track_packet(nr):
+    if nr in dict_postpakketten.keys():
+        return jsonify(detail=dict_postpakketten[nr], trackcode=nr), 200
+    else:
+        return jsonify(status="error"), 404
 
 
 if __name__ == '__main__':
