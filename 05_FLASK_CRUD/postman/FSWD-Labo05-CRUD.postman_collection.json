@@ -1,0 +1,407 @@
+{
+	"info": {
+		"_postman_id": "c1035fb9-71d6-4df3-b2e9-4fc4c75a2214",
+		"name": "FSWD-Labo05-CRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. get alle klanten",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/klanten",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"klanten"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. get één klant op klantID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/klanten/100",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"klanten",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3a. maak nieuwe klant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "FNaam",
+							"value": "Roobrouck",
+							"type": "text"
+						},
+						{
+							"key": "VNaam",
+							"value": "Dieter",
+							"type": "text"
+						},
+						{
+							"key": "Straat",
+							"value": "Graaf Karel De Goedelaan",
+							"type": "text"
+						},
+						{
+							"key": "Nummer",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "Postcode",
+							"value": "8500",
+							"type": "text"
+						},
+						{
+							"key": "Gemeente",
+							"value": "Kortrijk\n",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/klanten",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"klanten"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3b. maak nieuwe klantJSON",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"FNaam\": \"TEST\",\n    \"Gemeente\": \"TEST\",\n    \"Nummer\": \"23\",\n    \"Postcode\": \"8500\",\n    \"Straat\": \"TEST\",\n    \"VNaam\": \"TEST\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/klanten",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"klanten"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4a. wijzig klant",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "FNaam",
+							"value": "Roobrouck",
+							"type": "text"
+						},
+						{
+							"key": "VNaam",
+							"value": "Dieter",
+							"type": "text"
+						},
+						{
+							"key": "Straat",
+							"value": "Graaf Karel De Goedelaanlaan",
+							"type": "text"
+						},
+						{
+							"key": "Nr",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "Postcode",
+							"value": "8500",
+							"type": "text"
+						},
+						{
+							"key": "Gemeente",
+							"value": "Kortrijk\n",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/klanten/100",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"klanten",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4b. wijzig klant JSON",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"FNaam\": \"Roobrouck\",\n    \"VNaam\": \"Dieter\",\n    \"Straat\": \"Graaf Karel De Goedelaanlaan\",\n    \"Nr\": \"5\",\n    \"Postcode\": \"8500\",\n    \"Gemeente\": \"Kortrijk\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/klanten/100",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"klanten",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. verwijder klant",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/klanten/100",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"klanten",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. get alle Bestemmingen",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/bestemmingen",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"bestemmingen"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7. get één bestemming op bestemmingID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/bestemmingen/527",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"bestemmingen",
+						"527"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8. maak nieuwe bestemming",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "afkorting",
+							"value": "WEV",
+							"type": "text"
+						},
+						{
+							"key": "land",
+							"value": "Belgie",
+							"type": "text"
+						},
+						{
+							"key": "typevlucht",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "voluit",
+							"value": "Wevelgem National Airport",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/bestemmingen",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"bestemmingen"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "9. maak nieuwe bestemmingJSON",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"afkorting\": \"WEV\",\n    \"land\": \"Belgie\",\n    \"typevlucht\": \"1\",\n    \"voluit\": \"Wevelgem National Airport\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/bestemmingen",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"bestemmingen"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10. verwijder bestemming",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/bestemmingen/563",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"bestemmingen",
+						"563"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

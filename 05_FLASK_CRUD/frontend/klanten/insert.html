@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nieuwe Klant</title>
+  <link rel="stylesheet" href="../style/reizencorona.css">
+  <script src="../script/dataHandler.js"></script>
+  <script src="../script/insert.js"></script>
+
+</head>
+
+<body>
+  <h1>Nieuwe Klant</h1>
+  <p><a href="./">Back to Klanten</a></p>
+  <div class="js-result"></div>
+  <form>
+    <div>
+      <label for="KlantID">KlantID</label>
+      <input type="text" name="KlantID" id="KlantID" value="-" readonly />
+    </div>
+    <div>
+      <label for="FNaam">FNaam</label>
+      <input type="text" name="FNaam" id="FNaam" value="TEST" />
+    </div>
+    <div>
+      <label for="VNaam">VNaam</label>
+      <input type="text" name="VNaam" id="VNaam" value="TEST" />
+    </div>
+    <div>
+      <label for="Straat">Straat</label>
+      <input type="text" name="Straat" id="Straat" value="TEST" />
+    </div>
+    <div>
+      <label for="Nummer">Nummer</label>
+      <input type="number" name="Nummer" id="Nummer" value="23" />
+    </div>
+    <div>
+      <label for="Postcode">Postcode</label>
+      <input type="number" name="Postcode" id="Postcode" value="8500" />
+    </div>
+    <div>
+      <label for="Gemeente">Gemeente</label>
+      <input type="text" name="Gemeente" id="Gemeente" value="TEST" />
+    </div>
+    <input type="button" class="js-add" value="Toevoegen" />
+  </form>
+</body>
+
+</html>

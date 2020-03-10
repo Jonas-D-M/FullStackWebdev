@@ -1,0 +1,25 @@
+table,
+td,
+th {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  background-color: black;
+  color: white;
+}
+
+form label {
+  display: inline-block;
+  width: 100px;
+}
+
+form input[type="text"],
+form input[type="number"] {
+  width: 500px;
+}

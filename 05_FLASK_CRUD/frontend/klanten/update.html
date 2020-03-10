@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Klanten</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../style/reset.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../style/screen.css" />
+    <script src="../script/dataHandler.js"></script>
+    <script src="../script/klanten/update.js"></script>
+  </head>
+  <body>
+    <h1>Update Klant</h1>
+    <p><a href="./">Back to Klanten</a></p>
+    <div id="result"></div>
+    <form>
+      <div>
+        <label for="KlantID">KlantID</label>
+        <input type="text" name="KlantID" id="KlantID" readonly />
+      </div>
+      <div>
+        <label for="FNaam">FNaam</label>
+        <input type="text" name="FNaam" id="FNaam" />
+      </div>
+      <div>
+        <label for="VNaam">VNaam</label>
+        <input type="text" name="VNaam" id="VNaam" />
+      </div>
+      <div>
+        <label for="Straat">Straat</label>
+        <input type="text" name="Straat" id="Straat" />
+      </div>
+      <div>
+        <label for="Nummer">Nummer</label>
+        <input type="text" name="Nummer" id="Nummer" />
+      </div>
+      <div>
+        <label for="Postcode">Postcode</label>
+        <input type="text" name="Postcode" id="Postcode" />
+      </div>
+      <div>
+        <label for="Gemeente">Gemeente</label>
+        <input type="text" name="Gemeente" id="Gemeente" />
+      </div>
+      <input type="button" id="update" value="update" />
+    </form>
+  </body>
+</html>
