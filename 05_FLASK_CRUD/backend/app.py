@@ -12,7 +12,7 @@ endpoint = '/api/v1'
 
 @app.route('/')
 def index():
-    pass
+    return redirect(endpoint+"/klanten", 301)
 
 
 @app.route(endpoint + '/klanten', methods=["GET", "POST"])
