@@ -1,4 +1,4 @@
-from repositories.Repository import DataRepository
+from repositories.DataRepository import DataRepository
 from flask import Flask, request, jsonify, redirect
 from flask_cors import CORS
 
