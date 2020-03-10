@@ -18,28 +18,40 @@ def index():
 @app.route(endpoint + '/klanten', methods=["GET", "POST"])
 def klanten():
     if request.method == "GET":
-        data = jsonify(DataRepository.read_klanten())
-        return data
+        data = DataRepository.read_klanten()
+        if data is not None:
+            return jsonify(klanten=data, status="succes"), 200
+        else:
+            return jsonify(status="error"), 404
     elif request.method == "POST":
         gegevens = DataRepository.json_or_formdata(request)
-        data = jsonify(DataRepository.create_klant(
-            gegevens["FNaam"], gegevens["VNaam"], gegevens["Straat"], gegevens["Nummer"], gegevens["Postcode"], gegevens["Gemeente"]))
-        return data
+        data = DataRepository.create_klant(
+            gegevens["FNaam"], gegevens["VNaam"], gegevens["Straat"], gegevens["Nummer"], gegevens["Postcode"], gegevens["Gemeente"])
+        return jsonify(KlantID=data), 201
 
 
 @app.route(endpoint + '/klanten/<id>', methods=["GET", "PUT", "DELETE"])
 def klant(id):
     if request.method == "GET":
         data = jsonify(DataRepository.read_klant(id))
-        return data
+        if data is not None:
+            return jsonify(klant=data, status="succes"), 200
+        else:
+            return jsonify(status="error"), 404
     elif request.method == "PUT":
         gegevens = DataRepository.json_or_formdata(request)
-        data = jsonify(DataRepository.update_klant(
-            gegevens["FNaam"], gegevens["VNaam"], gegevens["Straat"], gegevens["Nr"], gegevens["Postcode"], gegevens["Gemeente"], id))
-        return data
+        data = DataRepository.update_klant(
+            gegevens["FNaam"], gegevens["VNaam"], gegevens["Straat"], gegevens["Nr"], gegevens["Postcode"], gegevens["Gemeente"], id)
+        if data is not None:
+            if data > 0:
+                return jsonify(KlantID=id), 200
+            else:
+                return jsonify(status=data), 200
+        else:
+            return jsonify(status="error")
     elif request.method == "DELETE":
-        data = jsonify(DataRepository.delete_klant(id))
-        return data
+        data = DataRepository.delete_klant(id)
+        return jsonify(data), 204
 
 
 if __name__ == '__main__':
