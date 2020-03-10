@@ -54,5 +54,24 @@ def klant(id):
         return jsonify(data), 204
 
 
+@app.route(endpoint + '/bestemmingen', methods=["GET", "POST"])
+def bestemmingen():
+    if request.method == "GET":
+        data = DataRepository.read_bestemmingen()
+        if data is not None:
+            return jsonify(bestemmingen=data, status="succes"), 200
+        else:
+            return jsonify(status="error"), 404
+    elif request.method == "POST":
+        gegevens = DataRepository.json_or_formdata(request)
+        data = DataRepository.create_bestemming()
+        return jsonify(BestemmingID=data), 201
+
+
+@app.route(endpoint + '/bestemming/<id>', methods=["GET", "PUT", "POST"])
+def bestemming():
+    pass
+
+
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5000, debug=True)

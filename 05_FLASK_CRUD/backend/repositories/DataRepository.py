@@ -39,3 +39,13 @@ class DataRepository:
         sql = "DELETE FROM tblklant WHERE klantid = %s"
         params = [klantid]
         return Database.execute_sql(sql, params)
+
+    #########  Bestemmingen  #########
+    @staticmethod
+    def read_bestemmingen():
+        sql = "SELECT * FROM tblbestemmingen"
+        return Database.get_rows(sql)
+
+    @staticmethod
+    def create_bestemming():
+        pass
