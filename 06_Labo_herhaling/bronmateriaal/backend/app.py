@@ -21,6 +21,31 @@ def api():
     return "Welcome to API"
 
 
+@app.route(endpoint+"/bestemmingen")
+def bestemmingen():
+    pass
+
+
+@app.route(endpoint+"/treinen", methods=["GET", "POST"])
+def treinen():
+    pass
+
+
+@app.route(endpoint+"/treinen/<trein_id>", methods=["GET", "PUT", "POST", "DELETE"])
+def treinen_met_id(trein_id):
+    pass
+
+
+@app.route(endpoint+"/treinen/<trein_id>/vertraging", methods=["PUT"])
+def treinen_vertraging(trein_id):
+    pass
+
+
+@app.route(endpoint+"treinen/bestemming/<bestemmings_id>")
+def treinen_bestemming(bestemmings_id):
+    pass
+
+
 # Start app
 if __name__ == '__main__':
     app.run(debug=True)
