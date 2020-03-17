@@ -23,15 +23,15 @@ class DataRepository:
         return Database.get_one_row(sql, params)
 
     @staticmethod
-    def create_trein(vertrek, bestemmingsID, spoor):
-        sql = "INSERT INTO treinen (vertrek, bestemmingsID, spoor) VALUES (%s, %s, %s)"
-        params = [vertrek, bestemmingsID, spoor]
+    def create_trein(vertrek, bestemmingID, spoor):
+        sql = "INSERT INTO treinen (vertrek, bestemmingID, spoor) VALUES (%s, %s, %s)"
+        params = [vertrek, bestemmingID, spoor]
         return Database.execute_sql(sql, params)
 
     @staticmethod
-    def update_trein(vertrek, bestemmingsID, spoor, vertraging, afgeschaft, idtrein):
-        sql = "UPDATE treinen SET vertrek = %s, bestemmingsID = %s, spoor = %s, vertraging = %s, afgeschaft = %s WHERE idtrein = %s"
-        params = [vertrek, bestemmingsID, spoor,
+    def update_trein(vertrek, bestemmingID, spoor, vertraging, afgeschaft, idtrein):
+        sql = "UPDATE treinen SET vertrek = %s, bestemmingID = %s, spoor = %s, vertraging = %s, afgeschaft = %s WHERE idtrein = %s"
+        params = [vertrek, bestemmingID, spoor,
                   vertraging, afgeschaft, idtrein]
         return Database.execute_sql(sql, params)
 
@@ -50,7 +50,7 @@ class DataRepository:
     #########  Bestemmingen  #########
     @staticmethod
     def read_bestemmingen():
-        sql = "SELECT * FROM bestemmingen"
+        sql = "SELECT idbestemming, stad FROM bestemmingen"
         return Database.get_rows(sql)
 
     @staticmethod

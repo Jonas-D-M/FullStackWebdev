@@ -45,7 +45,7 @@ def treinen():
     elif request.method == "POST":
         gegevens = DataRepository.json_or_formdata(request)
         data = DataRepository.create_trein(
-            gegevens["vertrek"], gegevens["bestemmingsid"], gegevens["spoor"])
+            gegevens["vertrek"], gegevens["bestemmingID"], gegevens["spoor"])
         return jsonify(treinID=data), 201
     else:
         return jsonify(status="error"), 405
@@ -61,18 +61,18 @@ def treinen_met_id(trein_id):
             return jsonify(status="error"), 404
     elif request.method == "PUT":
         gegevens = DataRepository.json_or_formdata(request)
-        data = DataRepository.update_trein(gegevens["vertrek"], gegevens["bestemmingsID"],
+        data = DataRepository.update_trein(gegevens["vertrek"], gegevens["bestemmingID"],
                                            gegevens["spoor"], gegevens["vertraging"], gegevens["afgeschaft"], trein_id)
         if data is not None:
             if data > 0:
                 return jsonify(treinID=trein_id), 200
             else:
-                return jsonify(status=data), 200
+                return jsonify(trein_id=trein_id), 200
         else:
             return jsonify(status="error")
     elif request.method == "DELETE":
         data = DataRepository.delete_trein(trein_id)
-        return jsonify(data), 204
+        return jsonify(status="succes"), 204
     else:
         return jsonify(status="error"), 405
 
@@ -87,12 +87,12 @@ def treinen_vertraging(trein_id):
             if data > 0:
                 return jsonify(treinID=trein_id), 200
             else:
-                return jsonify(status=data), 200
+                return jsonify(trein_id=trein_id), 200
     else:
         return jsonify(status="error"), 405
 
 
-@app.route(endpoint+"treinen/bestemming/<bestemmings_id>")
+@app.route(endpoint+"/treinen/bestemming/<bestemmings_id>")
 def treinen_bestemming(bestemmings_id):
     if request.method == "GET":
         data = DataRepository.read_treinen_met_bestemming(bestemmings_id)
