@@ -23,9 +23,9 @@ class DataRepository:
         return Database.get_one_row(sql, params)
 
     @staticmethod
-    def create_trein(vertrek, bestemmingsID, spoor, vertraging, afgeschaft):
+    def create_trein(vertrek, bestemmingsID, spoor):
         sql = "INSERT INTO treinen (vertrek, bestemmingsID, spoor) VALUES (%s, %s, %s)"
-        params = [vertrek, bestemmingsID, spoor, vertraging, afgeschaft]
+        params = [vertrek, bestemmingsID, spoor]
         return Database.execute_sql(sql, params)
 
     @staticmethod
