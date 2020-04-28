@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Drink Water</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="style/screen.css" />
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" integrity="sha256-bQmrZe4yPnQrLTY+1gYylfNMBuGfnT/HKsCGX+9Xuqo=" crossorigin="anonymous"></script>
+    <script src="script/dataHandler.js"></script>
+    <script src="script/app.js"></script>
+  </head>
+
+  <body class="u-space-center-center">
+    <main class="c-app">
+      <header class="c-header u-bring-to-front">
+        <ul class="c-timestamps js-timestamps"></ul>
+      </header>
+      <div class="c-percentage u-bring-to-front">
+        <h2 class="c-percentage__current js-percentage">
+          _ _
+        </h2>
+        <p class="c-percentage__goal">Of your goal of <span class="js-goal">1600</span><span class="js-units">ml</span>.</p>
+      </div>
+      <footer class="u-bring-to-front">
+        <button class="c-btn js-log-water" data-amount="250">
+          <svg class="c-btn__symbol" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="arcs">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+
+          log&nbsp;<span class="js-log">250</span>ml
+        </button>
+        <div class="c-water-amounts">
+          <input class="o-hide-accessible c-water-input js-water-amount" type="radio" name="water" id="water-0" data-amount="100" />
+          <label for="water-0" class="c-water-amount">
+            <svg class="c-water-amount__symbol u-icon-water-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="arcs">
+              <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
+            </svg>
+            <span class="c-water-amount__title">100ml</span>
+          </label>
+          <input class="o-hide-accessible c-water-input js-water-amount" type="radio" name="water" id="water-1" checked="checked" data-amount="250" />
+          <label for="water-1" class="c-water-amount">
+            <svg class="c-water-amount__symbol u-icon-water-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="arcs">
+              <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
+            </svg>
+            <span class="c-water-amount__title">250ml</span>
+          </label>
+          <input class="o-hide-accessible c-water-input js-water-amount" type="radio" name="water" id="water-2" data-amount="500" />
+          <label for="water-2" class="c-water-amount">
+            <svg class="c-water-amount__symbol u-icon-water-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="arcs">
+              <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
+            </svg>
+            <span class="c-water-amount__title">500ml</span>
+          </label>
+        </div>
+      </footer>
+
+      <div class="c-water js-waves">
+        <svg class="c-water__wave c-water__wave--back" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 560 20">
+          <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+          <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+          <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+          <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+        </svg>
+
+        <svg class="c-water__wave c-water__wave--front" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 560 20">
+          <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+          <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+          <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+          <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+        </svg>
+      </div>
+    </main>
+  </body>
+</html>

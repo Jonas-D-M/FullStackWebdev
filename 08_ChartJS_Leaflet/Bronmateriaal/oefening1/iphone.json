@@ -1,0 +1,117 @@
+[
+  {
+    "unit": "iPhone",
+    "year": 2007,
+    "price": 605
+  },
+  {
+    "unit": "iPhone 3G",
+    "year": 2009,
+    "price": 691
+  },
+  {
+    "unit": "iPhone 3GS",
+    "year": 2009,
+    "price": 700
+  },
+  {
+    "unit": "iPhone 4",
+    "year": 2010,
+    "price": 692
+  },
+  {
+    "unit": "iPhone 4S",
+    "year": 2011,
+    "price": 722
+  },
+  {
+    "unit": "iPhone 5",
+    "year": 2012,
+    "price": 708
+  },
+  {
+    "unit": "iPhone 5C",
+    "year": 2013,
+    "price": 584
+  },
+  {
+    "unit": "iPhone 5S",
+    "year": 2013,
+    "price": 700
+  },
+  {
+    "unit": "iPhone 6",
+    "year": 2014,
+    "price": 688
+  },
+  {
+    "unit": "iPhone 6 Plus",
+    "year": 2014,
+    "price": 784
+  },
+  {
+    "unit": "iPhone 6S",
+    "year": 2015,
+    "price": 689
+  },
+  {
+    "unit": "iPhone 6S Plus",
+    "year": 2015,
+    "price": 783
+  },
+  {
+    "unit": "iPhone SE",
+    "year": 2016,
+    "price": 395
+  },
+  {
+    "unit": "iPhone 7",
+    "year": 2016,
+    "price": 679
+  },
+  {
+    "unit": "iPhone 7 Plus",
+    "year": 2016,
+    "price": 804
+  },
+  {
+    "unit": "iPhone 8",
+    "year": 2017,
+    "price": 715
+  },
+  {
+    "unit": "iPhone 8 Plus",
+    "year": 2017,
+    "price": 809
+  },
+  {
+    "unit": "iPhone X",
+    "year": 2017,
+    "price": 1022
+  },
+  {
+    "unit": "iPhone XS",
+    "year": 2018,
+    "price": 999
+  },
+  {
+    "unit": "iPhone XS Max",
+    "year": 2018,
+    "price": 1099
+  },
+  {
+    "unit": "iPhone XR",
+    "year": 2018,
+    "price": 749
+  },
+  {
+    "unit": "iPhone 11",
+    "year": 2019,
+    "price": 809
+  },
+  {
+    "unit": "iPhone 11 PRO",
+    "year": 2019,
+    "price": 1159
+  }
+]

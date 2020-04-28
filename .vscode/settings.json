@@ -1,5 +1,5 @@
 {
-  "python.pythonPath": "venv_fswd\\Scripts\\python.exe",
+  "python.pythonPath": "venv_fswd/bin/python",
   "python.linting.pycodestyleEnabled": false,
   "python.linting.pylintEnabled": true,
   "python.linting.enabled": true,
