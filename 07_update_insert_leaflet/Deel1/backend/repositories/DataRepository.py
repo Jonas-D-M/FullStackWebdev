@@ -10,22 +10,28 @@ class DataRepository:
             gegevens = request.form.to_dict()
         return gegevens
 
-    #########  Treinen  #########
+    #########  treinen  #########
     @staticmethod
     def read_treinen():
-        sql = "SELECT * FROM treinen"
+        sql = "SELECT * from treinen"
         return Database.get_rows(sql)
 
     @staticmethod
-    def read_trein(treinid):
-        sql = "SELECT * FROM treinen WHERE idtrein = %s"
-        params = [treinid]
+    def read_trein(idtrein):
+        sql = "SELECT * from treinen WHERE idtrein = %s"
+        params = [idtrein]
         return Database.get_one_row(sql, params)
 
     @staticmethod
-    def create_trein(vertrek, bestemmingID, spoor):
-        sql = "INSERT INTO treinen (vertrek, bestemmingID, spoor) VALUES (%s, %s, %s)"
-        params = [vertrek, bestemmingID, spoor]
+    def read_treinen_met_bestemming(idtrein):
+        sql = "SELECT * FROM treinen t INNER JOIN bestemmingen b ON t.bestemmingID = b.idbestemming WHERE idbestemming = %s"
+        params = [idtrein]
+        return Database.get_rows(sql, params)
+
+    @staticmethod
+    def create_trein(vertrek, bestemmingID, spoor, vertraging, afgeschaft):
+        sql = "INSERT INTO treinen(vertrek, bestemmingID, spoor, vertraging, afgeschaft) VALUES(%s,%s,%s,%s,%s)"
+        params = [vertrek, bestemmingID, spoor, vertraging, afgeschaft]
         return Database.execute_sql(sql, params)
 
     @staticmethod
@@ -33,28 +39,24 @@ class DataRepository:
         sql = "UPDATE treinen SET vertrek = %s, bestemmingID = %s, spoor = %s, vertraging = %s, afgeschaft = %s WHERE idtrein = %s"
         params = [vertrek, bestemmingID, spoor,
                   vertraging, afgeschaft, idtrein]
-        return Database.execute_sql(sql, params)
-
-    @staticmethod
-    def delete_trein(idtrein):
-        sql = "DELETE FROM treinen WHERE idtrein = %s"
-        params = [idtrein]
+        print(sql)
         return Database.execute_sql(sql, params)
 
     @staticmethod
     def update_trein_vertraging(idtrein, vertraging):
-        sql = "UPDATE treinen SET vertraging = %s WHERE idtrein= %s"
+        sql = "UPDATE treinen SET vertraging = %s WHERE idtrein = %s"
         params = [vertraging, idtrein]
+        print(params)
         return Database.execute_sql(sql, params)
 
-    #########  Bestemmingen  #########
+    @staticmethod
+    def delete_trein(idtrein):
+        sql = "DELETE from treinen WHERE idtrein = %s"
+        params = [idtrein]
+        return Database.execute_sql(sql, params)
+
+     #########  Bestemmingen  #########
     @staticmethod
     def read_bestemmingen():
-        sql = "SELECT idbestemming, stad FROM bestemmingen"
+        sql = "SELECT * from bestemmingen"
         return Database.get_rows(sql)
-
-    @staticmethod
-    def read_treinen_met_bestemming(bestemmingid):
-        sql = "SELECT * FROM treinen t INNER JOIN bestemmingen b ON t.bestemmingID = b.idbestemming WHERE idbestemming = %s"
-        params = [bestemmingid]
-        return Database.get_rows(sql, params)

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leaflet Oefening 2</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="style/screen.css" />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+    <script src="script/app.js"></script>
+  </head>
+  <body>
+    <table class="c-campus">
+      <tr class="c-campus__header">
+        <th class="c-campus__cell c-campus__cell--header">Campus</th>
+        <th class="c-campus__cell c-campus__cell--header">Adres</th>
+        <th class="c-campus__cell c-campus__cell--header">Coördinaten</th>
+      </tr>
+      <tr class="c-campus__row">
+        <td class="c-campus__cell js-campusnaam">Campus Kortrijk Buda</td>
+        <td class="c-campus__cell js-adres">Dam 2A, Kortrijk</td>
+        <td class="c-campus__cell js-coords">50.831510,3.262840</td>
+      </tr>
+      <tr class="c-campus__row">
+        <td class="c-campus__cell js-campusnaam">Campus Kortrijk Weide</td>
+        <td class="c-campus__cell js-adres">Marksesteenweg 58, Kortrijk</td>
+        <td class="c-campus__cell js-coords">50.831510,3.262840</td>
+      </tr>
+      <tr class="c-campus__row">
+        <td class="c-campus__cell js-campusnaam">Campus Kortrijk The Square</td>
+        <td class="c-campus__cell js-adres">Luipaardstraat 12A, Kortrijk</td>
+        <td class="c-campus__cell js-coords">50.815950,3.316900</td>
+      </tr>
+      <tr class="c-campus__row">
+        <td class="c-campus__cell js-campusnaam">Campus Brugge Centrum</td>
+        <td class="c-campus__cell js-adres">Sint-Jorisstraat 71, Brugge</td>
+        <td class="c-campus__cell js-coords">51.214956,3.220875</td>
+      </tr>
+      <tr class="c-campus__row">
+        <td class="c-campus__cell js-campusnaam">Campus Brugge Station</td>
+        <td class="c-campus__cell js-adres">Rijselstraat 1, Brugge</td>
+        <td class="c-campus__cell js-coords">51.192042,3.213262</td>
+      </tr>
+      <tr class="c-campus__row">
+        <td class="c-campus__cell js-campusnaam">Sportinnovatiecampus Brugge</td>
+        <td class="c-campus__cell js-adres">Nijverheidsstraat 112, Brugge</td>
+        <td class="c-campus__cell js-coords">51.206684,3.242450</td>
+      </tr>
+      <tr class="c-campus__row">
+        <td class="c-campus__cell js-campusnaam">Campus Oudenaarde</td>
+        <td class="c-campus__cell js-adres">Fortstraat 47, Oudenaarde</td>
+        <td class="c-campus__cell js-coords">50.847780,3.612930</td>
+      </tr>
+    </table>
+
+    <div id="mapid"></div>
+  </body>
+</html>

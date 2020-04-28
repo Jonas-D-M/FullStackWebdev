@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 .vscode/
 venv_fswd/
+=======
+venv_fswd/
+.vscode
+>>>>>>> dc003323911577e838d3aa2b7e27ab541f94dc69

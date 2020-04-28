@@ -1,0 +1,11 @@
+body {
+    background-color: cornsilk
+}
+
+li.js-kleur {
+    cursor: pointer;
+}
+
+li.js-kleur:hover {
+    color: #F00;
+}
