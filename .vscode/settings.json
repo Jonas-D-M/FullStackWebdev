@@ -1,5 +1,5 @@
 {
-  "python.pythonPath": "venv_fswd/bin/python",
+  "python.pythonPath": "C:\\Users\\dejon\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
   "python.linting.pycodestyleEnabled": false,
   "python.linting.pylintEnabled": true,
   "python.linting.enabled": true,
