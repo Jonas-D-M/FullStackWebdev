@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="style/screen.css" />
+    <link href="https://fonts.googleapis.com/css?family=Cousine|Source+Sans+Pro&display=swap" rel="stylesheet" />
+
+    <script defer src="script/dataHandler.js"></script>
+    <script defer src="script/app.js"></script>
+
+    <title>Table of Mendeljev</title>
+  </head>
+  <body>
+    <main class="c-app">
+      <h1>Table of Mendeljev</h1>
+
+      <h3>Filter</h3>
+      <div class="js-filter c-filter">
+        <div data-typeid="1" class="js-filter-type c-filter--type c-filter--type-actinide">Actinide</div>
+        <div data-typeid="2" class="js-filter-type c-filter--type c-filter--type-alkalimetal">Alkali Metal</div>
+        <div data-typeid="3" class="js-filter-type c-filter--type c-filter--type-TYPECODE">TYPE</div>
+      </div>
+
+      <h3>Table</h3>
+      <div class="o-gridcontainer js-mendeljev">
+        <div data-atomic="1" class="c-mendelelement o-gridrow-1 o-gridcol-1 c-mendelelement--Nonmetal">
+          <div class="c-mendelelement__atomicnumber">1</div>
+          <div class="c-mendelelement__symbol">H</div>
+        </div>
+        <div data-atomic="2" class="c-mendelelement o-gridrow-1 o-gridcol-18 c-mendelelement--NobleGas">
+          <div class="c-mendelelement__atomicnumber">2</div>
+          <div class="c-mendelelement__symbol">He</div>
+        </div>
+        <div data-atomic="44" class="c-mendelelement o-gridrow-5 o-gridcol-8 c-mendelelement--TransitionMetal">
+          <div class="c-mendelelement__atomicnumber">44</div>
+          <div class="c-mendelelement__symbol">Ru</div>
+        </div>
+      </div>
+      <h2>Info</h2>
+      <div class="js-info"></div>
+    </main>
+  </body>
+</html>

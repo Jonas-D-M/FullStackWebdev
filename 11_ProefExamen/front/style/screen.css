@@ -1,0 +1,278 @@
+body,
+html {
+  font: 16px/1.6 'Source Sans Pro', sans-serif;
+}
+
+.c-app {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.o-gridcontainer {
+  display: grid;
+  /* grid-template-columns: 2.5rem 2.5rem 2.5rem 2.5rem 2.5rem 2.5rem 2.5rem 2.5rem 2.5rem 2.5rem 2.5rem 2.5rem 2.5rem 2.5rem 2.5rem 2.5rem 2.5rem 2.5rem; */
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  /* grid-template-columns: repeat(1fr, 18); */
+  grid-template-rows: 3.5rem 3.5rem 3.5rem 3.5rem 3.5rem 3.5rem 3.5rem 3.5rem 3.5rem;
+  grid-gap: 0.25rem;
+  /* background-color: #009688; */
+}
+
+.o-gridcol-1 {
+  grid-column: 1;
+}
+
+.o-gridcol-2 {
+  grid-column: 2;
+}
+
+.o-gridcol-3 {
+  grid-column: 3;
+}
+
+.o-gridcol-4 {
+  grid-column: 4;
+}
+
+.o-gridcol-5 {
+  grid-column: 5;
+}
+
+.o-gridcol-6 {
+  grid-column: 6;
+}
+
+.o-gridcol-7 {
+  grid-column: 7;
+}
+
+.o-gridcol-8 {
+  grid-column: 8;
+}
+
+.o-gridcol-9 {
+  grid-column: 9;
+}
+
+.o-gridcol-10 {
+  grid-column: 10;
+}
+
+.o-gridcol-11 {
+  grid-column: 11;
+}
+
+.o-gridcol-12 {
+  grid-column: 12;
+}
+
+.o-gridcol-13 {
+  grid-column: 13;
+}
+
+.o-gridcol-14 {
+  grid-column: 14;
+}
+
+.o-gridcol-15 {
+  grid-column: 15;
+}
+
+.o-gridcol-16 {
+  grid-column: 16;
+}
+
+.o-gridcol-17 {
+  grid-column: 17;
+}
+
+.o-gridcol-18 {
+  grid-column: 18;
+}
+
+.o-gridrow-1 {
+  grid-row: 1;
+}
+
+.o-gridrow-2 {
+  grid-row: 2;
+}
+
+.o-gridrow-3 {
+  grid-row: 3;
+}
+
+.o-gridrow-4 {
+  grid-row: 4;
+}
+
+.o-gridrow-5 {
+  grid-row: 5;
+}
+
+.o-gridrow-6 {
+  grid-row: 6;
+}
+
+.o-gridrow-7 {
+  grid-row: 7;
+}
+
+.o-gridrow-8 {
+  grid-row: 8;
+}
+
+.o-gridrow-9 {
+  grid-row: 9;
+}
+
+.c-filter {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-around; */
+
+  margin: 1rem -0.25rem;
+}
+
+.c-filter--type {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem 0.25rem;
+  /* border:solid thin red; */
+  border-radius: 1rem;
+  cursor: pointer;
+  background: #eeeeee;
+  opacity: 0.6;
+  will-change: opacity;
+}
+
+.c-filter--type::before {
+  content: '';
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: 0.5rem;
+
+  border-radius: 50%;
+  background: red;
+}
+
+.c-filter--type:hover {
+  opacity: 1;
+}
+
+.c-filter--type-Actinide::before {
+  background: lightgrey;
+}
+
+.c-filter--type-AlkaliMetal::before {
+  background: orangered;
+}
+
+.c-filter--type-AlkalineEarthMetal::before {
+  background: lightseagreen;
+}
+
+.c-filter--type-Halogen::before {
+  background: lightsalmon;
+}
+
+.c-filter--type-Lanthanide::before {
+  background: lightgreen;
+}
+
+.c-filter--type-Metal::before {
+  background: cornflowerblue;
+}
+
+.c-filter--type-Metalloid::before {
+  background: hotpink;
+}
+
+.c-filter--type-NobleGas::before {
+  background: limegreen;
+}
+
+.c-filter--type-Nonmetal::before {
+  background: yellow;
+}
+
+.c-filter--type-Transactinide::before {
+  background: lightblue;
+}
+
+.c-filter--type-TransitionMetal::before {
+  background: lightskyblue;
+}
+
+.c-mendelelement {
+  display: flex;
+  flex-direction: column;
+  padding: 0.2rem;
+
+  cursor: help;
+  /* border: 1px solid transparent; */
+}
+
+.c-mendelelement__symbol {
+  display: flex;
+  align-self: center;
+
+  font-family: Cousine;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.c-mendelelement__atomicnumber {
+  font-size: 0.75rem;
+  display: flex;
+}
+
+.c-mendelelement:hover {
+  opacity: 0.7;
+  /* border: solid thin black; */
+}
+
+.c-mendelelement--NobleGas {
+  background-color: limegreen;
+}
+
+.c-mendelelement--Nonmetal {
+  background-color: yellow;
+}
+
+.c-mendelelement--AlkaliMetal {
+  background-color: orangered;
+}
+
+.c-mendelelement--AlkalineEarthMetal {
+  background-color: lightseagreen;
+}
+
+.c-mendelelement--Metalloid {
+  background-color: hotpink;
+}
+
+.c-mendelelement--Halogen {
+  background-color: lightsalmon;
+}
+
+.c-mendelelement--TransitionMetal {
+  background-color: lightskyblue;
+}
+
+.c-mendelelement--Lanthanide {
+  background-color: lightgreen;
+}
+
+.c-mendelelement--Actinide {
+  background-color: lightgrey;
+}
+
+.c-mendelelement--Transactinide {
+  background-color: lightblue;
+}
+
+.c-mendelelement--Metal {
+  background-color: cornflowerblue;
+}
