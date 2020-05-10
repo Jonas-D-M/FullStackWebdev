@@ -1,6 +1,6 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
 
-/* .o-hide-accessible {
+.o-hide-accessible {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -9,7 +9,7 @@
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
-} */
+}
 
 @-webkit-keyframes wave-front {
   to {
